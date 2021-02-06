@@ -138,6 +138,10 @@ const PrimeraPantalla = ({
           editable={false}
           style={styles.textInput}
           value={colorNuevaCategoria}
+          onChangeText={(nuevoTexto) => {
+            console.log('mensaje',nuevoTexto);
+            setColorNuevaCategoria(nuevoTexto);
+          }}
         />
       </TouchableOpacity>
       <Button style={styles.modalButton} onPress={() => crearCategoria()}>

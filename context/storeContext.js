@@ -19,9 +19,9 @@ export const StoreProvider = ({children}) => {
   //agregado 30dec2020
   const [compradores, setCompradores] = useState([
     {nombre: 'Mario Santos', email: 'marito@gmail.com', id: Math.random().toString(10)},
-    {nombre: 'Maximo Cozetti', color: 'cozetti@gmail.com', id: Math.random().toString(10)},
-    {nombre: 'Pablo Lamponne', color: 'lampo@gmail.com', id: Math.random().toString(10)},
-    {nombre: 'Gabriel Medina', color: 'elgabi@gmail.com', id: Math.random().toString(10)},
+    {nombre: 'Maximo Cozetti', email: 'cozetti@gmail.com', id: Math.random().toString(10)},
+    {nombre: 'Pablo Lamponne', email: 'lampo@gmail.com', id: Math.random().toString(10)},
+    {nombre: 'Gabriel Medina', email: 'elgabi@gmail.com', id: Math.random().toString(10)},
   ]);
   const [compradoresProducto, setCompradoresProducto] = useState({});
 
@@ -36,7 +36,8 @@ export const StoreProvider = ({children}) => {
 
   const agregarProductoACategoria = (categoria, producto) => {
     if (!categoria?.id || !producto?.id) {
-      return; // No hay id de categoria o producto
+      
+      return <Text>This is another page</Text>; // No hay id de categoria o producto
     }
 
     const categoriaProductos = categoriasProductos[categoria.id] ?? [];

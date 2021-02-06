@@ -85,6 +85,7 @@ export const ListaCompradores = () => {
                   nombreNuevoComprador={nombreNuevoComprador}
                   setNombreNuevoComprador={setNombreNuevoComprador}
                   emailNuevoComprador={emailNuevoComprador}
+                  setEmailNuevoComprador={setEmailNuevoComprador}
                   setPrimeraPantalla={setPrimeraPantalla}
                   crearComprador={crearComprador}
                 />
@@ -126,6 +127,7 @@ export const ListaCompradores = () => {
         nombreNuevoComprador,
         setNombreNuevoComprador,
         emailNuevoComprador,
+        setEmailNuevoComprador,
         setPrimeraPantalla,
         crearComprador,
       }) => {
@@ -142,9 +144,11 @@ export const ListaCompradores = () => {
             <TouchableOpacity onPress={() => setPrimeraPantalla(false)}>
               <TextInput
                 placeholder="Email de comprador"
-                editable={false}
                 style={styles.textInput}
                 value={emailNuevoComprador}
+                onChangeText={(nuevoTexto) => {
+                  setEmailNuevoComprador(nuevoTexto);
+                }}
               />
             </TouchableOpacity>
             <Button style={styles.modalButton} onPress={() => crearComprador()}>
@@ -164,7 +168,7 @@ export const ListaCompradores = () => {
               }}
               hideSliders={true}
               style={styles.container}
-            />
+            /> 
             <Button
               style={styles.modalButton}
               onPress={() => setPrimeraPantalla(true)}>
